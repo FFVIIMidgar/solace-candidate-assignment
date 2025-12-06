@@ -4,40 +4,35 @@ import { useState, ChangeEvent } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 export default function AdvocatesSearchInput() {
-  const [searchQueryInput, setSearchQueryInput] = useState<string>();
+  const [searchString, setSearchString] = useState<string>();
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  function onSearchInputChange(e: ChangeEvent<HTMLInputElement>) {
-    const inputValue = e.target.value.trim();
-    setSearchQueryInput(inputValue);
-
+  const onSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target.value;
     const urlSearchParams = new URLSearchParams(searchParams);
 
+    setSearchString(inputValue);
+
     if (inputValue) {
-      urlSearchParams.set("query", inputValue);
+      urlSearchParams.set("search", inputValue);
     } else {
-      urlSearchParams.delete("query");
+      urlSearchParams.delete("search");
     }
 
-    const urlSearchParamsString = urlSearchParams.toString();
-    const queryString = urlSearchParamsString ? `?${urlSearchParamsString}` : "";
-
-    router.push(`${pathname}${queryString}`);
+    router.push(`${pathname}?${urlSearchParams.toString()}`);
   }
 
-  function onSearchResetClick() {
-    setSearchQueryInput("");
+  const onSearchResetClick = () => {
+    setSearchString("");
     router.push(pathname);
   }
 
   return (
     <div>
-      <p>
-        Searching for: {searchQueryInput}
-      </p>
-      <input style={{ border: "1px solid black" }} onChange={onSearchInputChange} value={searchQueryInput} />
+      <p>Searching for: {searchString}</p>
+      <input style={{ border: "1px solid black" }} onChange={onSearchInputChange} value={searchString} />
       <button onClick={onSearchResetClick}>Reset Search</button>
     </div>
   );
