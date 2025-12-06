@@ -3,8 +3,12 @@
 import { useState, ChangeEvent } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
-export default function AdvocatesSearchInput() {
-  const [searchString, setSearchString] = useState<string>();
+export default function AdvocatesSearchInput({
+  searchInputText,
+}: {
+  searchInputText: string,
+}) {
+  const [searchString, setSearchString] = useState<string>(searchInputText);
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();

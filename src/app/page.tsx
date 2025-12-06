@@ -17,7 +17,7 @@ export default async function Home(
       <h1>Solace Advocates</h1>
       <br />
       <br />
-      <AdvocatesSearchSection />
+      <AdvocatesSearchSection searchInputText={searchString}/>
       <br />
       <br />
       <table>

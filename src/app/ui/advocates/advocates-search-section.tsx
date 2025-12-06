@@ -1,10 +1,14 @@
 import AdvocatesSearchInput from "./advocates-search-input";
 
-export default function AdvocatesSearchSection() {
+export default function AdvocatesSearchSection({
+  searchInputText,
+}: {
+  searchInputText: string,
+}) {
   return (
     <div>
       <p>Search</p>
-      <AdvocatesSearchInput />
+      <AdvocatesSearchInput searchInputText={searchInputText}/>
     </div>
   );
 }
