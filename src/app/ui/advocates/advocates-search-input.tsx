@@ -2,6 +2,8 @@
 
 import { useState, ChangeEvent } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { Input } from "../../../components/ui/input";
+import { Button } from "../../../components/ui/button";
 
 export default function AdvocatesSearchInput({
   searchInputText,
@@ -35,9 +37,8 @@ export default function AdvocatesSearchInput({
 
   return (
     <div>
-      <p>Searching for: {searchString}</p>
-      <input style={{ border: "1px solid black" }} onChange={onSearchInputChange} value={searchString} />
-      <button onClick={onSearchResetClick}>Reset Search</button>
+      <Input onChange={onSearchInputChange} value={searchString} placeholder="Search first name, last name, city, degree, specialties, or years of experience..." />
+      <Button className="mt-4 bg-emerald-800 hover:bg-emerald-900" onClick={onSearchResetClick}>Reset Search</Button>
     </div>
   );
 }

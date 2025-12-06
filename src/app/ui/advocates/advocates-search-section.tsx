@@ -1,4 +1,5 @@
 import AdvocatesSearchInput from "./advocates-search-input";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../../../components/ui/card";
 
 export default function AdvocatesSearchSection({
   searchInputText,
@@ -6,9 +7,16 @@ export default function AdvocatesSearchSection({
   searchInputText: string,
 }) {
   return (
-    <div>
-      <p>Search</p>
-      <AdvocatesSearchInput searchInputText={searchInputText}/>
+    <div className="flex justify-center my-12">
+      <Card className="w-1/2 border-gray-300 drop-shadow-lg">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold">Search Advocates</CardTitle>
+          <CardDescription>Use our dynamic search to find the Solace health advocate that is right for you!</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <AdvocatesSearchInput searchInputText={searchInputText}/>
+        </CardContent>
+      </Card>
     </div>
   );
 }
