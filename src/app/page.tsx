@@ -1,6 +1,7 @@
 import { getAllAdvocates, getFilteredAdvocates } from "./data/data";
 import AdvocatesSearchSection from "./ui/advocates/advocates-search-section";
 import AdvocatesTable from "./ui/advocates/advocates-table";
+import BackToTopButton from "./ui/common/back-to-top-button";
 
 export default async function Home(
   props: {
@@ -20,6 +21,9 @@ export default async function Home(
       </div>
       <AdvocatesSearchSection searchInputText={searchString}/>
       <AdvocatesTable advocates={advocates}/>
+      <div className="flex justify-center">
+        <BackToTopButton />
+      </div>
     </main>
   );
 }
