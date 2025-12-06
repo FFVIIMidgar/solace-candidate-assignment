@@ -1,5 +1,6 @@
 import { getAllAdvocates, getFilteredAdvocates } from "./data/data";
 import AdvocatesSearchSection from "./ui/advocates/advocates-search-section";
+import AdvocatesTable from "./ui/advocates/advocates-table";
 
 export default async function Home(
   props: {
@@ -13,45 +14,12 @@ export default async function Home(
   const advocates = searchString ? await getFilteredAdvocates(searchString) : await getAllAdvocates();
 
   return (
-    <main style={{ margin: "24px" }}>
-      <h1>Solace Advocates</h1>
-      <br />
-      <br />
+    <main className="mx-28 my-6">
+      <div className="w-full bg-gradient-to-r from-emerald-900 to-white p-4 rounded-md">
+        <h1 className="text-2xl font-bold text-white">Solace Advocates</h1>
+      </div>
       <AdvocatesSearchSection searchInputText={searchString}/>
-      <br />
-      <br />
-      <table>
-        <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>City</th>
-            <th>Degree</th>
-            <th>Specialties</th>
-            <th>Years of Experience</th>
-            <th>Phone Number</th>
-          </tr>
-        </thead>
-        <tbody>
-          {advocates.map((advocate) => {
-            return (
-              <tr key={advocate.id}>
-                <td>{advocate.firstName}</td>
-                <td>{advocate.lastName}</td>
-                <td>{advocate.city}</td>
-                <td>{advocate.degree}</td>
-                <td>
-                  {(advocate.specialties).map((specialty) => (
-                    <div key={specialty}>{specialty}</div>
-                  ))}
-                </td>
-                <td>{advocate.yearsOfExperience}</td>
-                <td>{advocate.phoneNumber}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <AdvocatesTable advocates={advocates}/>
     </main>
   );
 }
