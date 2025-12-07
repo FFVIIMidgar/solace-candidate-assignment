@@ -12,9 +12,11 @@ export default function BackToTopButton() {
   };
 
   return (
-    <Button className="mt-4 bg-emerald-800 hover:bg-emerald-900" onClick={onBackToTopClick}>
-      <ArrowUp />
-      Back to top
-    </Button>
+    <div className="flex justify-center">
+      <Button className="mt-4 bg-emerald-800 hover:bg-emerald-900" onClick={onBackToTopClick}>
+        <ArrowUp />
+        Back to top
+      </Button>
+    </div>
   );
 }
