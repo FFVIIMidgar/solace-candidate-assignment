@@ -1,5 +1,3 @@
-import { PageLink, PageLinkType } from "../data/types";
-
 export const phoneNumberLength = 10;
 
 export const formatPhoneNumber = (phoneNumber: number): string => {
@@ -20,7 +18,7 @@ export const formatPhoneNumber = (phoneNumber: number): string => {
 
 export const pluralize = (word: string, count: number): string => {
   return (count != 1) ? `${word}s` : word;
-}
+};
 
 export const getAdvocateInitials = (firstName: string, lastName: string): string => {
   return `${firstName[0]}${lastName[0]}`.toUpperCase();
@@ -34,7 +32,7 @@ export const createUrl = (url: string, params: any): string => {
   }
 
   return url + ((paramsArray.length > 0) ? `?${paramsArray.join("&")}` : "");
-}
+};
 
 export const getResultsString = (total: number, page: number, pageSize: number): string => {
   let minResults = page * pageSize - (pageSize - 1);
@@ -49,5 +47,8 @@ export const getResultsString = (total: number, page: number, pageSize: number):
   }
 
   return `Showing ${minResults}-${maxResults} of ${total}`;
-}
+};
 
+export const clamp = (value: number, min: number, max: number): number => {
+  return Math.max(1, Math.min(value, max));
+};

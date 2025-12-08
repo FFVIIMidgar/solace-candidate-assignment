@@ -1,28 +1,31 @@
-import { Advocate } from "../../data/types";
+import { getFilteredAdvocates, getAdvocateCount } from "../../data/data";
 import AdvocateItem from "./advocate-item";
 import { Separator } from "../../../components/ui/separator";
 import { pluralize, getResultsString } from "../../lib/utils";
 import AdvocatesPagination from "./advocates-pagination";
 import { CircleAlert } from "lucide-react";
+import { clamp } from "../../lib/utils";
 
 export default async function AdvocatesDisplayGrid({
-  advocates,
-  advocateCount,
   searchString,
   page,
-  pageSize,
 }: {
-  advocates: Advocate[],
-  advocateCount: number,
   searchString: string,
   page: number,
-  pageSize: number,
 }) {
+  const advocatesPageSize = 10;
+  const advocateCount = await getAdvocateCount(searchString);
+  const totalPages = Math.ceil(advocateCount / advocatesPageSize);
+
+  page = clamp(page, 1, totalPages);
+
   const advocatesHeader = searchString
     ? `Found ${advocateCount} ${pluralize("advocate", advocateCount)} containing: "${searchString}"` 
     :`Showing all ${advocateCount} advocates`;
 
-  const totalPages = Math.ceil(advocateCount / pageSize);
+
+    const advocates = await getFilteredAdvocates(searchString, page, advocatesPageSize);
+
   
   return (
     <div>
@@ -37,7 +40,7 @@ export default async function AdvocatesDisplayGrid({
               );
             })}
           </div>
-          <div className="mt-4 text-sm font-semibold">{getResultsString(advocateCount, page, pageSize)}</div>
+          <div className="mt-4 text-sm font-semibold">{getResultsString(advocateCount, page, advocatesPageSize)}</div>
           <AdvocatesPagination searchString={searchString} currentPage={page} totalPages={totalPages}/>
         </div> 
       : 

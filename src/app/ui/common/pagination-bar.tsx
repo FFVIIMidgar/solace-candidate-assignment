@@ -33,19 +33,19 @@ export default function PaginationBar({
     return className;
   }
 
+  const getMinPage = (): number => {
+    return Math.max(1, currentPage - (maxPages / 2));
+  };
+
+  const getMaxPage = (): number => {
+    return Math.min(currentPage + ((maxPages / 2 - 1)), totalPages);
+  };
+
   const getPageLinks = (): PageLink[] => {
     const pageLinks: PageLink[] = [];
 
-    let minPage = currentPage - 5;
-    let maxPage = currentPage + 4;
-
-    if (minPage < 1) {
-      minPage = 1;
-    }
-
-    if (maxPage > totalPages) {
-      maxPage = totalPages;
-    }
+    const minPage = getMinPage();
+    const maxPage = getMaxPage();
 
     if (currentPage != 1) {
       pageLinks.push({
@@ -75,6 +75,7 @@ export default function PaginationBar({
     return pageLinks;
   }
 
+  const maxPages = 10;
   const pageLinks = getPageLinks();
 
   return (
