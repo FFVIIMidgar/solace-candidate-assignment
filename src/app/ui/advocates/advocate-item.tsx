@@ -17,7 +17,7 @@ export default function AdvocateItem({
       <Item className="w-full h-full bg-gray-50 border-gray-300 hover:bg-gray-100">
         <ItemMedia>
           <Avatar className="size-24 drop-shadow-lg">
-            <AvatarImage src="/favicon.ico" />
+            <AvatarImage src={advocate.imageUrl} />
             <AvatarFallback className="text-3xl font-medium">{getAdvocateInitials(advocate.firstName, advocate.lastName)}</AvatarFallback>
 \          </Avatar>
         </ItemMedia>

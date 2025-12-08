@@ -20,8 +20,9 @@ export const createAdvocateFromData = (
     specialties: unknown;
     yearsOfExperience: number;
     phoneNumber: number;
+    imageUrl: string;
     createdAt: Date | null;
-  },
+  }
 ): Advocate => {
   return {
     id: data.id,
@@ -32,6 +33,7 @@ export const createAdvocateFromData = (
     specialties: data.specialties as string[],
     yearsOfExperience: data.yearsOfExperience,
     phoneNumber: data.phoneNumber,
+    imageUrl: data.imageUrl,
     createdAt: data.createdAt,
   };
 };

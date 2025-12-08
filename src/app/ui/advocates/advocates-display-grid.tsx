@@ -5,6 +5,7 @@ import { pluralize, getResultsString } from "../../lib/utils";
 import AdvocatesPagination from "./advocates-pagination";
 import { CircleAlert } from "lucide-react";
 import { clamp } from "../../lib/utils";
+import { Item, ItemContent } from "../../../components/ui/item";
 
 export default async function AdvocatesDisplayGrid({
   searchString,
@@ -45,10 +46,16 @@ export default async function AdvocatesDisplayGrid({
         </div> 
       : 
         <div>
-          <div className="flex justify-center items-center gap-1 m-4">
-            <CircleAlert />
-            <div className="text-base font-bold">Nothing to show here! Please try again with different search criteria.</div>
-          </div>
+          <div className="flex justify-center m-4">
+            <Item className="w-1/2 bg-gray-50 border-gray-300">
+                <ItemContent>
+                  <div className="flex justify-center items-center gap-1">
+                    <CircleAlert />
+                      <div className="text-lg font-bold">Nothing to show here! Please try again with different search criteria.</div>
+                  </div>
+                </ItemContent>
+              </Item>
+            </div>
         </div>}
     </div>
   );

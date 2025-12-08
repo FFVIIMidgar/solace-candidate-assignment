@@ -7,6 +7,7 @@ export type Advocate = {
   specialties: string[];
   yearsOfExperience: number;
   phoneNumber: number;
+  imageUrl: string;
   createdAt: Date | null;
 };
 

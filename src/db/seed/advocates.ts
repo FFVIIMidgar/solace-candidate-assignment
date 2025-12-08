@@ -46,6 +46,7 @@ const advocateData = [
     specialties: specialties.slice(...randomSpecialty()),
     yearsOfExperience: 10,
     phoneNumber: 5551234567,
+    imageUrl: "https://untitledui.com/images/avatars/drew-cano",
   },
   {
     firstName: "Jane",
@@ -55,6 +56,7 @@ const advocateData = [
     specialties: specialties.slice(...randomSpecialty()),
     yearsOfExperience: 8,
     phoneNumber: 5559876543,
+    imageUrl: "https://untitledui.com/images/avatars/bec-ferguson",
   },
   {
     firstName: "Alice",
@@ -64,6 +66,7 @@ const advocateData = [
     specialties: specialties.slice(...randomSpecialty()),
     yearsOfExperience: 5,
     phoneNumber: 5554567890,
+    imageUrl: "https://untitledui.com/images/avatars/zara-bush",
   },
   {
     firstName: "Michael",
@@ -73,6 +76,7 @@ const advocateData = [
     specialties: specialties.slice(...randomSpecialty()),
     yearsOfExperience: 12,
     phoneNumber: 5556543210,
+    imageUrl: "https://untitledui.com/images/avatars/zaid-schwartz",
   },
   {
     firstName: "Emily",
@@ -82,6 +86,7 @@ const advocateData = [
     specialties: specialties.slice(...randomSpecialty()),
     yearsOfExperience: 7,
     phoneNumber: 5553210987,
+    imageUrl: "https://untitledui.com/images/avatars/ava-bentley",
   },
   {
     firstName: "Chris",
@@ -91,6 +96,7 @@ const advocateData = [
     specialties: specialties.slice(...randomSpecialty()),
     yearsOfExperience: 9,
     phoneNumber: 5557890123,
+    imageUrl: "https://untitledui.com/images/avatars/ethan-valdez",
   },
   {
     firstName: "Jessica",
@@ -100,6 +106,7 @@ const advocateData = [
     specialties: specialties.slice(...randomSpecialty()),
     yearsOfExperience: 11,
     phoneNumber: 5554561234,
+    imageUrl: "https://untitledui.com/images/avatars/katy-fuller",
   },
   {
     firstName: "David",
@@ -109,6 +116,7 @@ const advocateData = [
     specialties: specialties.slice(...randomSpecialty()),
     yearsOfExperience: 6,
     phoneNumber: 5557896543,
+    imageUrl: "https://untitledui.com/images/avatars/danyal-lester",
   },
   {
     firstName: "Laura",
@@ -118,6 +126,7 @@ const advocateData = [
     specialties: specialties.slice(...randomSpecialty()),
     yearsOfExperience: 4,
     phoneNumber: 5550123456,
+    imageUrl: "https://untitledui.com/images/avatars/courtney-turner",
   },
   {
     firstName: "Daniel",
@@ -127,6 +136,7 @@ const advocateData = [
     specialties: specialties.slice(...randomSpecialty()),
     yearsOfExperience: 13,
     phoneNumber: 5553217654,
+    imageUrl: "https://untitledui.com/images/avatars/nicolas-trevino",
   },
   {
     firstName: "Sarah",
@@ -136,6 +146,7 @@ const advocateData = [
     specialties: specialties.slice(...randomSpecialty()),
     yearsOfExperience: 10,
     phoneNumber: 5551238765,
+    imageUrl: "https://untitledui.com/images/avatars/harriet-rojas",
   },
   {
     firstName: "James",
@@ -145,6 +156,7 @@ const advocateData = [
     specialties: specialties.slice(...randomSpecialty()),
     yearsOfExperience: 5,
     phoneNumber: 5556540987,
+    imageUrl: "https://untitledui.com/images/avatars/rory-huff",
   },
   {
     firstName: "Megan",
@@ -154,6 +166,8 @@ const advocateData = [
     specialties: specialties.slice(...randomSpecialty()),
     yearsOfExperience: 14,
     phoneNumber: 5559873456,
+    imageUrl: "https://untitledui.com/images/avatars/ashton-blackwell",
+
   },
   {
     firstName: "Joshua",
@@ -163,6 +177,7 @@ const advocateData = [
     specialties: specialties.slice(...randomSpecialty()),
     yearsOfExperience: 9,
     phoneNumber: 5556781234,
+    imageUrl: "https://untitledui.com/images/avatars/blake-riley",
   },
   {
     firstName: "Amanda",
@@ -172,6 +187,7 @@ const advocateData = [
     specialties: specialties.slice(...randomSpecialty()),
     yearsOfExperience: 3,
     phoneNumber: 5559872345,
+    imageUrl: "https://untitledui.com/images/avatars/brianna-ware",
   },
 ];
 
