@@ -9,3 +9,21 @@ export type Advocate = {
   phoneNumber: number;
   createdAt: Date | null;
 };
+
+export type SearchParams = {
+  search?: string;
+  page?: string;
+}
+
+export type PageLink = {
+  type: PageLinkType;
+  className?: string;
+  href: string;
+  pageNumber?: number;
+}
+
+export enum PageLinkType {
+  Previous,
+  Link,
+  Next,
+}

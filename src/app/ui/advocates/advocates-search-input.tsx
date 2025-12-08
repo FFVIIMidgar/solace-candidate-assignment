@@ -23,8 +23,10 @@ export default function AdvocatesSearchInput({
 
     if (inputValue) {
       urlSearchParams.set("search", inputValue);
+      urlSearchParams.delete("page");
     } else {
       urlSearchParams.delete("search");
+      urlSearchParams.delete("page");
     }
 
     router.push(`${pathname}?${urlSearchParams.toString()}`);

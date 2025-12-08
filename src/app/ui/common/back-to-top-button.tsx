@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "../../../components/ui/button";
-import { ArrowUp } from "lucide-react";
+import { CircleArrowUp } from "lucide-react";
 
 export default function BackToTopButton() {
   const onBackToTopClick = () => {
@@ -14,7 +14,7 @@ export default function BackToTopButton() {
   return (
     <div className="flex justify-center">
       <Button className="mt-4 bg-emerald-800 hover:bg-emerald-900" onClick={onBackToTopClick}>
-        <ArrowUp />
+        <CircleArrowUp />
         Back to top
       </Button>
     </div>
