@@ -22,7 +22,7 @@ I decided to tackle this piecemeal, having each commit pertain to a particular f
 - The client will handle routing with each interaction on the page, which the server will then fetch data and render server components.
 - I removed the `document.getElementById()` logic and replaced it with a state variable since we are working with a virtual DOM.
 
-3. Next, I wanted to set up the database. Up until this point I've primarily (almost exclusively) used MySQL and seeing that this application uses PostgreSQL, I wanted to understand that more. Additionally I wanted the application to come close to a real life application as much as possible, and using a database is a sure way of doing that. 
+3. Next, I wanted to set up the database. Up until this point I've primarily (almost exclusively) used MySQL and seeing that this application uses PostgreSQL, I wanted to understand that more. I found that it is very similar to MySQL. Additionally I wanted the application to come close to a real life application as much as possible, and using a database is a sure way of doing that. 
 - There was a bug in the `docker-compose.yml` file that caused the container to be in a restarting loop. This bug was fixed.
 - I uncommented the database URL in the `.env` file.
 
