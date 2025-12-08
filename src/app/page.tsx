@@ -4,6 +4,7 @@ import AdvocatesDisplayGrid from "./ui/advocates/advocates-display-grid";
 import { SearchParams } from "./data/types";
 import { Suspense } from "react";
 import AdvocateDisplayGridSkeleton from "./ui/advocates/advocate-display-grid-skeleton";
+import AdvocatesHeader from "./ui/advocates/advocates-header";
 
 export default async function Home(
   props: {
@@ -16,9 +17,7 @@ export default async function Home(
 
   return (
     <main className="mx-36 my-6">
-      <div className="w-full bg-gradient-to-r from-emerald-900 to-white p-4 rounded-md">
-        <h1 className="text-3xl font-bold text-white">Solace Advocates</h1>
-      </div>
+      <AdvocatesHeader />
       <AdvocatesSearchSection searchInputText={searchString}/>
       <Suspense key={searchString} fallback={<AdvocateDisplayGridSkeleton />}>
         <AdvocatesDisplayGrid searchString={searchString} page={page}/>

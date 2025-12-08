@@ -2,8 +2,9 @@
 
 import { useState, ChangeEvent } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
-import { Input } from "../../../components/ui/input";
+import { InputGroup, InputGroupInput, InputGroupAddon } from "../../../components/ui/input-group";
 import { Button } from "../../../components/ui/button";
+import { Search } from "lucide-react";
 
 export default function AdvocatesSearchInput({
   searchInputText,
@@ -39,7 +40,12 @@ export default function AdvocatesSearchInput({
 
   return (
     <div>
-      <Input onChange={onSearchInputChange} value={searchString} placeholder="Search first name, last name, city, degree, specialties, or years of experience..." />
+      <InputGroup>
+        <InputGroupInput onChange={onSearchInputChange} value={searchString} placeholder="Search first name, last name, city, degree, specialties, or years of experience..." />
+        <InputGroupAddon>
+          <Search />
+        </InputGroupAddon>
+      </InputGroup>
       <Button className="mt-4 bg-emerald-800 hover:bg-emerald-900" onClick={onSearchResetClick}>Reset Search</Button>
     </div>
   );
