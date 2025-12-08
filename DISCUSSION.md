@@ -86,9 +86,3 @@ Of course there are still more features and enhancements that can be done with t
 Again, I truly had so much fun with this assignment. If anything, I learned SO MUCH by doing this and I was amazed with what I could come up with, especially having worked mostly on the backend. I really did enjoy the frontend work and making the UI look so nice and polished. This was so fun that I wanted to keep going and thus it became a weekend project, which I hope is okay!
 
 I hope you enjoy seeing my work as much as I enjoyed doing it!
-
-
-
-
-
-
