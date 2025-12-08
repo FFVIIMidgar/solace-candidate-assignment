@@ -80,6 +80,9 @@ Of course there are still more features and enhancements that can be done with t
 - Input validation on the frontend and backend for the search field(s) as well as URL parameters.
 - One thing I looked up was something called "debouncing". This essentially means that instead of querying the database with each keystroke, the application waits until the user stops typing after a certain amount of time, then query the database. This reduces the number of hits on the database drastically.
 - Fix any vulnerabilities with packages and libraries that were installed.
+- Have a Light Mode and Dark Mode toggle.
+- Employ caching, especially for common searches.
+- Have each card open a separate page with more details about the advocate.
 
 ## Conclusion
 
