@@ -80,7 +80,7 @@ export default function PaginationBar({
 
   return (
     <div>
-      <Pagination className="m-6">
+      <Pagination className="my-6">
         <PaginationContent>
           {pageLinks.map((pageLink) => {
             switch (pageLink.type) {
