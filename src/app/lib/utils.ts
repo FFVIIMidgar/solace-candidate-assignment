@@ -25,9 +25,9 @@ export const getAdvocateInitials = (firstName: string, lastName: string): string
 };
 
 export const createUrl = (url: string, params: any): string => {
-  let paramsArray: string[] = [];
+  const paramsArray: string[] = [];
 
-  for (let key in params) {
+  for (const key in params) {
     paramsArray.push(`${key}=${params[key]}`);
   }
 
@@ -35,16 +35,8 @@ export const createUrl = (url: string, params: any): string => {
 };
 
 export const getResultsString = (total: number, page: number, pageSize: number): string => {
-  let minResults = page * pageSize - (pageSize - 1);
-  let maxResults = page * pageSize;
-
-  if (minResults < 1) {
-    minResults = 1;
-  }
-
-  if (maxResults > total) {
-    maxResults = total;
-  }
+  const minResults = Math.max(1, page * pageSize - (pageSize - 1));
+  const maxResults = Math.min(page * pageSize, total);
 
   return `Showing ${minResults}-${maxResults} of ${total}`;
 };

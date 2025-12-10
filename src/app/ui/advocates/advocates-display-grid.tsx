@@ -33,7 +33,8 @@ export default async function AdvocatesDisplayGrid({
       <div className="text-lg font-bold">{advocatesHeader}</div>
       <Separator className="my-6" />
       {advocateCount > 0 
-      ? <div>
+      ? 
+        <div>
           <div className="grid grid-cols-2 gap-2">
             {advocates.map((advocate) => {
               return (
