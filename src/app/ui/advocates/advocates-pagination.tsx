@@ -10,7 +10,7 @@ export default function AdvocatesPagination({
   totalPages: number,
 }) {
 
-  let params: any = {};
+  const params: any = {};
 
   if (searchString) {
     params.search = searchString;
@@ -20,5 +20,5 @@ export default function AdvocatesPagination({
     <div>
       <PaginationBar url="/" params={params} currentPage={currentPage} totalPages={totalPages} />
     </div>
-  )
+  );
 }

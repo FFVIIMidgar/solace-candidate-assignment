@@ -16,7 +16,7 @@ export default function BackToTopButton() {
       <div className="flex justify-center">
         <Button className="mt-4 bg-emerald-800 hover:bg-emerald-900" onClick={onBackToTopClick}>
           <CircleArrowUp />
-          Back to top
+          <div>Back to top</div>
         </Button>
       </div>
     </div>

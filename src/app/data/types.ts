@@ -14,14 +14,14 @@ export type Advocate = {
 export type SearchParams = {
   search?: string;
   page?: string;
-}
+};
 
 export type PageLink = {
   type: PageLinkType;
   className?: string;
   href: string;
   pageNumber?: number;
-}
+};
 
 export enum PageLinkType {
   Previous,

@@ -5,7 +5,7 @@ import { MapPin, Phone, CircleChevronRight, CircleCheckBig, Check } from "lucide
 import { formatPhoneNumber, pluralize, getAdvocateInitials } from "../../lib/utils";
 import { Separator } from "../../../components/ui/separator";
 import { ScrollArea } from "../../../components/ui/scroll-area";
-import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
+import { Popover, PopoverTrigger, PopoverContent } from "../../../components/ui/popover";
 
 export default function AdvocateItem({
   advocate,
@@ -19,7 +19,7 @@ export default function AdvocateItem({
           <Avatar className="size-24 drop-shadow-lg">
             <AvatarImage src={advocate.imageUrl} />
             <AvatarFallback className="text-3xl font-medium">{getAdvocateInitials(advocate.firstName, advocate.lastName)}</AvatarFallback>
-\          </Avatar>
+          </Avatar>
         </ItemMedia>
         <ItemContent className="w-full h-full">
           <div className="flex justify-between items-center text-emerald-800">
@@ -42,7 +42,7 @@ export default function AdvocateItem({
           <div className="flex justify-between items-center">
             <div className="w-full">
               <div className="flex gap-1 items-center text-emerald-800 font-bold">
-                <h3>Specializes in {advocate.specialties.length} {pluralize("field", advocate.specialties.length)}</h3>
+                <div>Specializes in {advocate.specialties.length} {pluralize("field", advocate.specialties.length)}</div>
                 <Popover>
                   <PopoverTrigger>
                     <CircleChevronRight size="16px" />

@@ -24,9 +24,7 @@ export default async function AdvocatesDisplayGrid({
     ? `Found ${advocateCount} ${pluralize("advocate", advocateCount)} containing: "${searchString}"` 
     :`Showing all ${advocateCount} advocates`;
 
-
     const advocates = await getFilteredAdvocates(searchString, page, advocatesPageSize);
-
   
   return (
     <div>

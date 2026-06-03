@@ -5,6 +5,7 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { InputGroup, InputGroupInput, InputGroupAddon } from "../../../components/ui/input-group";
 import { Button } from "../../../components/ui/button";
 import { Search } from "lucide-react";
+import { useDebouncedCallback } from "use-debounce";
 
 export default function AdvocatesSearchInput({
   searchInputText,
@@ -15,12 +16,21 @@ export default function AdvocatesSearchInput({
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const debounceTimeout = 300;
 
   const onSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
-    const urlSearchParams = new URLSearchParams(searchParams);
-
     setSearchString(inputValue);
+    handleSearch(inputValue);
+  }
+
+  const onSearchResetClick = () => {
+    setSearchString("");
+    router.push(pathname);
+  }
+
+  const handleSearch = useDebouncedCallback((inputValue: string) => {
+    const urlSearchParams = new URLSearchParams(searchParams);
 
     if (inputValue) {
       urlSearchParams.set("search", inputValue);
@@ -31,12 +41,7 @@ export default function AdvocatesSearchInput({
     }
 
     router.push(`${pathname}?${urlSearchParams.toString()}`);
-  }
-
-  const onSearchResetClick = () => {
-    setSearchString("");
-    router.push(pathname);
-  }
+  }, debounceTimeout);
 
   return (
     <div>
